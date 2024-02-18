@@ -1,0 +1,77 @@
+{
+    "editor.renderWhitespace": "all",
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4,
+    "editor.rulers": [80],
+    // "editor.wordWrap": "wordWrapColumn",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.eol": "\n",
+    "workbench.colorCustomizations": {
+        "editorWhitespace.foreground": "#6273a47b"
+    },
+    "nebulaOni.update.restoreConfiguration": {
+        "themeSettings": {
+            "background": "Grey",
+            "main": "Bumblebee",
+            "highlight": "Ultra Violet",
+            "focusBorder": "ON",
+            "fontStyle": "Italic",
+            "comments": "Dark Violet",
+            "favorite": "OFF"
+        },
+        "favoriteSettings": {
+            "background": "Glacial Blue",
+            "main": "Sakura",
+            "highlight": "Ultra Violet",
+            "focusBorder": "ON",
+            "fontStyle": "Italic",
+            "comments": "Dark Magenta",
+            "favorite": "Nebula Oni (Pegasus)"
+        }
+    },
+    "workbench.colorTheme": "Nebula Oni (Cerberus)",
+	"workbench.iconTheme": "vscode-icons",
+    "42header.email": "wjuneo-f@student.42sp.org.br",
+    "42header.username": "wjuneo-f",
+    "git.ignoreMissingGitWarning": true,
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "Ubuntu-20.04 (WSL)": {
+            "path": "C:\\Windows\\System32\\wsl.exe",
+            "args": [
+                "-d",
+                "Ubuntu-20.04"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Ubuntu-20.04 (WSL)",
+    "security.allowedUNCHosts": [
+        "wsl.localhost"
+    ],
+	"terminal.external.windowsExec": "C:\\Program Files\\Git\\git-bash.exe",
+	"window.zoomLevel": 1,
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"github.copilot.enable": {
+		"*": true,
+		"plaintext": false,
+		"markdown": false,
+		"scminput": false
+	},
+	"files.autoSave": "afterDelay"
+}
