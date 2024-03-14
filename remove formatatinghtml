@@ -1,0 +1,42 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<link href="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.snow.css" rel="stylesheet" />
+	</head>
+	<body>
+		<form id="meuForm" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input type="submit" name="enviar" value="Enviar">
+			<input type="submit" name="salvar" value="Salvar">
+			<div id='editor' style="white-space: pre-wrap;"></div>
+		  </form>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.js"></script>
+		<script>
+			const quill = new Quill('#editor', {
+				theme: 'snow'
+			});
+			const Delta = Quill.import('delta');
+
+			// Remover formatação quando um texto e colado no editor
+			quill.clipboard.addMatcher(Node.ELEMENT_NODE, function(node, delta) {
+				if (node.children.length > 0) {
+					node.textContent += '\n'
+				}
+				return new Delta().insert(node.textContent);
+			});
+
+			quill.on('text-change', function(delta, oldDelta, source) {
+				let content = quill.root.innerHTML.replace(/&nbsp;/g, ' ');
+				content = content.replace(/&[^;]+;/g, '');
+				console.log(content);
+			});
+		</script>
+	</body>
+	</html>
